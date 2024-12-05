@@ -1,0 +1,49 @@
+pub(crate) struct DayXExecutor<'a> {
+    input: &'a str,
+}
+
+impl<'a> DayXExecutor<'a> {
+    const LINE_SEP: &'static str = "   ";
+
+    pub fn new(input: &'a str) -> Self {
+        Self { input }
+    }
+
+    pub fn exec_a(&mut self) -> String {
+        String::new()
+    }
+
+    pub fn exec_b(&mut self) -> String {
+        String::new()
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use crate::days::{Day, DayNumber};
+
+    use super::*;
+
+    #[test]
+    fn test_example_a() {
+        let mut day = Day::new(DayNumber::DayX);
+        day.read_test_input();
+
+        let timer = std::time::Instant::now();
+        let res = day.exec_a();
+        let t = timer.elapsed();
+        println!("Result: {:?} ({:?})", res, t);
+    }
+
+
+    #[test]
+    fn test_example_b() {
+        let mut day = Day::new(DayNumber::DayX);
+        day.read_test_input();
+
+        let timer = std::time::Instant::now();
+        let res = day.exec_b();
+        let t = timer.elapsed();
+        println!("Result: {:?} ({:?})", res, t);
+    }
+}
